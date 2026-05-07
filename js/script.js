@@ -159,3 +159,28 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lightboxNextHandler();
   if (e.key === 'ArrowLeft') lightboxPrevHandler();
 });
+
+
+// =====================================================
+// HAMBURGER MENU
+// =====================================================
+const navBurger = document.getElementById('navBurger');
+const navLinks = document.querySelector('.nav-links');
+
+if (navBurger && navLinks) {
+  navBurger.addEventListener('click', () => {
+    const isOpen = navBurger.classList.toggle('is-open');
+    navLinks.classList.toggle('is-open');
+    navBurger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    navBurger.setAttribute('aria-label', isOpen ? 'Zavřít menu' : 'Otevřít menu');
+  });
+
+  // Zavřít menu po kliknutí na link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navBurger.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      navBurger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}

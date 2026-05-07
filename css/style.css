@@ -138,7 +138,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.55rem 1rem;
+  padding: 0.6rem 1rem 0.5rem;
   background: var(--orange);
   color: var(--white) !important;
   font-family: var(--font-mono);
@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
   text-decoration: none;
   border: 1px solid currentColor;
-  padding: 0.55rem 1.1rem;
+  padding: 0.6rem 1.1rem 0.5rem;
   border-radius: 999px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   white-space: nowrap;
@@ -172,9 +172,112 @@ img { max-width: 100%; display: block; }
 .nav.dark-mode .nav-cta:hover { background: var(--white); color: var(--black); border-color: var(--white); }
 .nav.light-mode .nav-cta:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 
-@media (max-width: 800px) {
-  .nav-links { display: none; }
+/* HAMBURGER BURGER button - skrytý na desktopu */
+.nav-burger {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  color: inherit;
 }
+.nav-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+/* Hamburger -> X po otevření */
+.nav-burger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-burger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* MOBILE menu */
+@media (max-width: 800px) {
+  .nav-burger {
+    display: flex;
+  }
+  /* Schovat nav-links zatím */
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+    transform: translateY(-120%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+  }
+  /* Light mode background pro mobile menu */
+  .nav.light-mode .nav-links {
+    background: var(--white);
+    border-top-color: var(--slate-200);
+  }
+  .nav-links.is-open {
+    transform: translateY(0);
+  }
+  .nav-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 1rem;
+  }
+  .nav.light-mode .nav-links li {
+    border-bottom-color: var(--slate-200);
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  .nav-links a {
+    font-size: 1.05rem;
+    padding: 0.4rem 0;
+    display: block;
+  }
+}
+
+/* Velmi malé displeje - menší tlačítka */
+@media (max-width: 480px) {
+  .nav-cv span {
+    display: none;
+  }
+  .nav-cv {
+    padding: 0.5rem;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+  .nav-cv svg {
+    width: 16px;
+    height: 16px;
+  }
+  .nav-cta {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.75rem;
+  }
+}
+
+
 @media (max-width: 720px) {
   .nav-cv { padding: 0.5rem 0.85rem; font-size: 0.78rem; }
   .nav-cta { padding: 0.5rem 0.9rem; font-size: 0.82rem; }
@@ -190,8 +293,8 @@ img { max-width: 100%; display: block; }
   color: var(--white);
   overflow: hidden;
   display: flex;
-  align-items: center;
-  
+  align-items: top;
+  padding: clamp(10rem, 12vw, 20rem) 0 5rem;
 }
 
 /* Background grid */
@@ -399,7 +502,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-mono);
   font-size: 0.82rem;
   letter-spacing: 0.02em;
-  padding: 0.85rem 1.5rem;
+  padding: 1.05rem 1.6rem 0.85rem;
   border-radius: 999px;
   text-decoration: none;
   display: inline-flex;
@@ -522,6 +625,7 @@ img { max-width: 100%; display: block; }
   background: var(--slate-100);
   border-radius: 4px;
   overflow: hidden;
+  margin-top: 4.7rem;
   max-width: 380px;
 }
 @media (max-width: 900px) {
@@ -627,7 +731,7 @@ img { max-width: 100%; display: block; }
 }
 .project {
   display: grid;
-  grid-template-columns: 5fr 4fr;
+  grid-template-columns: 4fr 5fr;
   gap: 0;
   align-items: stretch;
   background: var(--white);
@@ -662,6 +766,23 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   padding: 2.5rem;
   overflow: hidden;
+}
+/* Plný obrázek – bez paddingu, vyplní celou plochu */
+.project-visual.full-img {
+  padding: 0;
+}
+.project-visual.full-img::before {
+  display: none; /* zruší overlay gradient */
+}
+.project-visual.full-img img {
+  max-height: 480px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  border-radius: 0;
+  box-shadow: none;
 }
 .project-visual::before {
   content: '';

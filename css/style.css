@@ -138,7 +138,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.6rem 1rem 0.5rem;
+  padding: 0.6rem 1.3rem 0.5rem;
   background: var(--orange);
   color: var(--white) !important;
   font-family: var(--font-mono);
@@ -294,7 +294,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   display: flex;
   align-items: top;
-  padding: clamp(10rem, 12vw, 20rem) 0 5rem;
+  padding: clamp(12rem, 14vw, 15rem) 0 5rem;
 }
 
 /* Background grid */
@@ -442,7 +442,7 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
   font-family: var(--font-sans);
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-size: clamp(2.5rem, 4vw, 5.2rem);
   line-height: 0.95;
   letter-spacing: -0.045em;
   font-weight: 500;
@@ -502,7 +502,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-mono);
   font-size: 0.82rem;
   letter-spacing: 0.02em;
-  padding: 1.05rem 1.6rem 0.85rem;
+  padding: 0.85rem 1.6rem 0.65rem;
   border-radius: 999px;
   text-decoration: none;
   display: inline-flex;
@@ -529,8 +529,33 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid rgba(255,255,255,0.08);
   z-index: 3;
 }
-@media (max-width: 720px) {
-  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+/* Krátký displej (málo výšky) NEBO úzký – stats jdou do toku, vytlačí dolů */
+@media (max-height: 500px), (max-width: 720px) {
+  .hero {
+    display: block;
+    min-height: auto;
+    padding: clamp(5rem, 10vw, 8rem) 0 3rem;
+  }
+  .hero-stats {
+    position: static;
+    margin: 3rem auto 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 1480px;
+    padding-left: clamp(2rem, 5vw, 4rem);
+    padding-right: clamp(2rem, 5vw, 4rem);
+    box-sizing: border-box;
+  }
+}
+
+/* Velmi úzký – statistiky 2x2 místo 4x1 */
+@media (max-width: 600px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
 }
 .hero-stat .num {
   font-family: var(--font-display);
@@ -879,13 +904,22 @@ img { max-width: 100%; display: block; }
   font-size: 0.78rem;
   margin-top: auto;
 }
-.project-links a {
+.project-links-a {
   color: var(--slate-900);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   transition: color 0.2s;
+}
+.project-links-demo {
+  color: var(--orange);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  font-weight: 500;
 }
 .project-links a::after { content: '→'; transition: transform 0.2s; }
 .project-links a:hover { color: var(--orange); }

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Štefko — Junior Developer · CV</title>
+<meta name="description" content="Životopis Jana Štefka — Junior C# .NET Developer">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   PAGE setup pro tisk - A4 portrait, žádné okraje
+   ============================================================ */
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #d0d0d0;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1a1a1a;
+}
+
+/* ============================================================
+   PRINT BAR - jen na obrazovce, v tisku se schová
+   ============================================================ */
+.print-bar {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 100;
+}
+.print-bar .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem 0.6rem;
+  background: #ff5e1a;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(255, 94, 26, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.print-bar .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(255, 94, 26, 0.45);
+}
+.print-bar .btn-ghost {
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.print-bar .btn-ghost:hover {
+  border-color: #1a1a1a;
+}
+
+/* ============================================================
+   PAGE - PEVNÉ A4 ROZMĚRY (na obrazovce i v tisku stejné)
+   ============================================================ */
+.page {
+  /* Pevná šířka A4 portrait */
+  width: 210mm;
+  height: 297mm;
+  
+  /* Pozadí + tieň jen na obrazovce, v tisku zmizí */
+  background: white;
+  margin: 2rem auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  
+  /* 2 sloupce - sidebar + main */
+  display: flex;
+  flex-direction: row;
+  
+  /* Cokoli přeteče A4, ořízneme */
+  overflow: hidden;
+  
+  /* Vynutí samostatnou stránku v tisku */
+  page-break-after: always;
+}
+
+/* ============================================================
+   LEVÝ SIDEBAR (tmavá strana)
+   ============================================================ */
+.sidebar {
+  /* Pevná šířka */
+  width: 70mm;
+  flex-shrink: 0;
+  
+  background: #0a0a0c;
+  color: white;
+  padding: 12mm 8mm;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  width: 38mm;
+  height: 38mm;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: 0 auto 4mm;
+  overflow: hidden;
+  border: 2px solid #ff5e1a;
+  background: #1a1a1a;
+  flex-shrink: 0;
+  display: block;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.sidebar h1 {
+  font-family: 'Geist', sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 1mm;
+}
+.sidebar .role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  text-align: center;
+  color: #ff5e1a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4mm;
+}
+
+.sidebar h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff5e1a;
+  margin: 4mm 0 2mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.sidebar h2:first-of-type { margin-top: 0; }
+
+.sidebar-list {
+  list-style: none;
+  font-size: 9pt;
+  line-height: 1.2;
+}
+.sidebar-list li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5mm;
+}
+.sidebar-list li .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1mm;
+}
+.sidebar-list li .value {
+  color: white;
+  word-break: break-word;
+  font-size: 8.5pt;
+}
+
+/* Skills v sidebaru */
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1mm;
+  font-size: 8.5pt;
+}
+.skill-row .name {
+  color: white;
+  margin-top: 1mm;
+}
+.skill-row .level-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3mm;
+  font-size: 8.5pt;
+}
+.lang-row .lang-name { color: white; }
+.lang-row .lang-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   PRAVÝ HLAVNÍ OBSAH (světlá strana)
+   ============================================================ */
+.main {
+  /* Vyplní zbytek (210mm - 70mm = 140mm) */
+  width: 140mm;
+  flex-shrink: 0;
+  
+  padding: 12mm 10mm;
+  background: white;
+  overflow: hidden;
+}
+
+.profile-block {
+  margin-bottom: 5mm; 
+  margin-top: 7mm;
+  padding-bottom: 5mm;
+  border-bottom: 1px solid #e5e5e5;
+}
+.profile-block p {
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: #2a2a2a;
+}
+.profile-block strong { font-weight: 600; color: #0a0a0c; }
+
+.main h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff5e1a;
+  margin: 5mm 0 3mm;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.main h2::before {
+  content: '';
+  display: inline-block;
+  width: 5mm;
+  height: 1px;
+  background: #ff5e1a;
+}
+.main h2:first-of-type { margin-top: 0; }
+
+/* Job entry */
+.job {
+  margin-bottom: 4mm;
+}
+.job:last-child { margin-bottom: 0; }
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 3mm;
+  margin-bottom: 1mm;
+  margin-top: 4mm;
+}
+.job-title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 10pt;
+  color: #0a0a0c;
+  letter-spacing: -0.01em;
+}
+.job-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  color: #666;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.job-role {
+  font-style: italic;
+  font-size: 8.5pt;
+  color: #555;
+  margin-bottom: 1.5mm;
+}
+.job-desc {
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: #333;
+}
+.job-desc ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 3mm;
+}
+.job-desc li {
+  position: relative;
+  padding-left: 4mm;
+  margin-bottom: 0.5mm;
+}
+.job-desc li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff5e1a;
+  font-weight: bold;
+}
+
+/* Education entry */
+.edu {
+  margin-bottom: 3mm;
+}
+.edu:last-child { margin-bottom: 0; }
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 3mm;
+  margin-bottom: 0.5mm;
+}
+.edu-title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 9.5pt;
+  color: #0a0a0c;
+}
+.edu-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  color: #666;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.edu-meta {
+  font-size: 8pt;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 4mm;
+}
+
+/* ============================================================
+   PRINT - jediná věc je schovat tlačítka a vynutit barvy
+   Layout zůstává úplně stejný jako na obrazovce!
+   ============================================================ */
+@media print {
+  html, body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-bar {
+    display: none;
+  }
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Tlačítka pro tisk / zpět -->
+<div class="print-bar">
+  <a href="index.html" class="btn btn-ghost">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Zpět
+  </a>
+  <button class="btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Stáhnout PDF
+  </button>
+</div>
+
+<!-- A4 stránka -->
+<div class="page">
+
+  <!-- LEVÝ SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="photo">
+      <img src="img/portrait.jpg" alt="Jan Štefko">
+    </div>
+
+    <h1>Jan Štefko</h1>
+    <div class="role">Junior Developer</div>
+
+    <h2>Kontakt</h2>
+    <ul class="sidebar-list">
+      <li>
+        <span class="label">E-mail</span>
+        <span class="value">jan.stefko@email.cz</span>
+      </li>
+      <li>
+        <span class="label">Telefon</span>
+        <span class="value">+420 774 564 620</span>
+      </li>
+      <li>
+        <span class="label">Web</span>
+        <span class="value">janstefko.cz</span>
+      </li>
+      <li>
+        <span class="label">GitHub</span>
+        <span class="value">/JanStefko</span>
+      </li>
+      <li>
+        <span class="label">LinkedIn</span>
+        <span class="value">/in/jan-štefko</span>
+      </li>
+      <li>
+        <span class="label">Lokalita</span>
+        <span class="value">Ostrava, CZ</span>
+      </li>
+    </ul>
+
+    <h2>Vývojářské dovednosti</h2>
+    <div class="skill-row">
+      <span class="name">C# / .NET 8</span>
+      <span class="level-text">OOP, LINQ, async</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">ASP.NET Core Web API</span>
+      <span class="level-text">REST, DI, JWT, Identity</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">Entity Framework Core</span>
+      <span class="level-text">Migrace, Repository</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">SQL Server / Azure SQL</span>
+      <span class="level-text">CRUD, joins</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">React 19 + Vite</span>
+      <span class="level-text">Hooks, Context, Routing</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">JavaScript / HTML / CSS</span>
+      <span class="level-text">Tailwind, Bootstrap</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">Azure</span>
+      <span class="level-text">App Service, SQL, SWA, DNS</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">Git / GitHub</span>
+      <span class="level-text">Workflow, PR, Actions</span>
+    </div>
+    <div class="skill-row">
+      <span class="name">xUnit + Moq</span>
+      <span class="level-text">Unit testy</span>
+    </div>
+
+    <h2>Jazyky</h2>
+    <div class="lang-row">
+      <span class="lang-name">Čeština</span>
+      <span class="lang-level">Rodný</span>
+    </div>
+    <div class="lang-row">
+      <span class="lang-name">Angličtina</span>
+      <span class="lang-level">B1+ · aktivně</span>
+    </div>
+
+    <h2>Osobní</h2>
+    <ul class="sidebar-list">
+      <li>
+        <span class="label">Řidičský průkaz</span>
+        <span class="value">Skupina B</span>
+      </li>
+      <!-- <li>
+        <span class="label">Občanství</span>
+        <span class="value">Česká republika</span>
+      </li> -->
+      <li>
+        <span class="label">Možný nástup</span>
+        <span class="value" style="color: #ff5e1a; font-weight: 600;">06 / 2026</span>
+      </li>
+    </ul>
+
+  </aside>
+
+  <!-- PRAVÝ HLAVNÍ OBSAH -->
+  <main class="main">
+
+    <div class="profile-block">
+      <h2>Profil</h2>
+      <p>
+        <strong>Junior C# .NET vývojář</strong> s patnáctiletou praxí v designu interiérů
+        a konstrukci nábytku. Po roční rekvalifikaci a samostudiu jsem postavil první
+        full-stack aplikaci a nasadil ji do Azure cloudu. Hledám pozici junior
+        vývojáře, kde mohu uplatnit znalosti z C# .NET, ASP.NET Core a React, a kde je
+        doménová znalost designu a konstrukce přidanou hodnotou.
+      </p>
+    </div>
+
+    <h2>Pracovní zkušenosti</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">HAST Group s.r.o.</span>
+        <span class="job-date">04 / 2025 — 04 / 2026</span>
+      </div>
+      <div class="job-role">Designer a konstruktér nábytku</div>
+      <div class="job-desc">
+        <ul>
+          <li>Návrh nábytku, schvalovací dokumentace, konstrukce</li>
+          <li>Příprava výroby pro lidi i CNC stroje (IMOS, SketchUp)</li>
+          <li>Práce na mezinárodních komerčních projektech</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Designer interiérů — OSVČ</span>
+        <span class="job-date">2019 — 2025</span>
+      </div>
+      <div class="job-role">Vlastní praxe</div>
+      <div class="job-desc">
+        <ul>
+          <li>Návrhy rezidenčních a komerčních interiérů</li>
+          <li>Kuchyně a nábytek na míru, příprava výroby</li>
+          <li>Komunikace s klientem, koordinace s výrobou</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Truhlářství ZASA s.r.o.</span>
+        <span class="job-date">2017 — 2019</span>
+      </div>
+      <div class="job-role">Vedoucí výroby</div>
+      <div class="job-desc">
+        <ul>
+          <li>Návrhy a konzultace, kalkulace, smluvní dokumentace</li>
+          <li>Konstrukce, nákup materiálů, normování</li>
+          <li>Plánování a řízení výroby, vedení týmu</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">RESIDOMO Služby s.r.o.</span>
+        <span class="job-date">2016 — 2017</span>
+      </div>
+      <div class="job-role">Provozní technik</div>
+      <div class="job-desc">
+        <ul>
+          <li>Realizace zakázek v rámci údržby bytových domů</li>
+          <li>Vedení týmu pěti lidí</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Jiří Štefko — Dýhy Štefko</span>
+        <span class="job-date">2012 — 2016</span>
+      </div>
+      <div class="job-role">Výroba dýhovaných komponent (rodinný podnik)</div>
+      <div class="job-desc">
+        <ul>
+          <li>Dýhování na zakázku, výroba nábytkových komponent</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ing. David Meinhard</span>
+        <span class="job-date">2009 — 2012</span>
+      </div>
+      <div class="job-role">Projektant pozemních staveb</div>
+      <div class="job-desc">
+        <ul>
+          <li>Dokumentace stupně DÚR a DSP</li>
+          <li>Zastupování klienta při územním a stavebním řízení</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Vzdělání</h2>
+
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-title">Tvorba www aplikací — Rekvalifikace MŠMT</span>
+        <span class="edu-date">2025</span>
+      </div>
+      <div class="edu-meta">ITnetwork s.r.o. · 197 hodin · Akreditovaná rekvalifikace</div>
+    </div>
+
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-title">Udemy: WPF · AZ-900 · C# Masterclass</span>
+        <span class="edu-date">2025 — 2026</span>
+      </div>
+      <div class="edu-meta">Pokračující sebevzdělávání</div>
+    </div>
+
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-title">Bc. Ekonomika a management</span>
+        <span class="edu-date">2013 — 2016</span>
+      </div>
+      <div class="edu-meta">Vysoká škola podnikání a práva · obor Podnikání · diplom s vyznamenáním</div>
+    </div>
+
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-title">Pozemní stavitelství — Maturita</span>
+        <span class="edu-date">2004 — 2009</span>
+      </div>
+      <div class="edu-meta">Střední průmyslová škola stavební Ostrava</div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

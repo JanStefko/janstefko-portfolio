@@ -1,475 +1,940 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jan Štefko — Designer · Konstruktér · Vývojář</title>
-<meta name="description" content="Portfolio Jana Štefka. Designér a konstruktér s 15 lety praxe. Vývojář webových aplikací — C# .NET, ASP.NET Core, React.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jan Štefko — Junior Developer · Designer · Konstruktér</title>
+    <meta
+      name="description"
+      content="Portfolio Jana Štefka. Junior C# .NET developer s patnáctiletou praxí v designu a konstrukci nábytku. Hledám pozici junior vývojáře."
+    />
 
+    <!-- Favicon: JŠ logo -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
 
-<!-- NAV -->
-<nav class="nav dark-mode" id="nav">
-  <div class="container nav-inner">
-    <div class="nav-mark">JŠ_ / Štefko</div>
-    <ul class="nav-links">
-      <li><a href="#about">O mně</a></li>
-      <li><a href="#work">Projekty</a></li>
-      <li><a href="#design">Design</a></li>
-      <li><a href="#skills">Dovednosti</a></li>
-      <li><a href="#path">Cesta</a></li>
-    </ul>
-    <a class="nav-cta" href="#contact">Kontakt →</a>
-  </div>
-</nav>
+    <!-- Open Graph / LinkedIn / sociální sítě -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://janstefko.cz/" />
+    <meta property="og:title" content="Jan Štefko — Junior Developer" />
+    <meta
+      property="og:description"
+      content="Junior C# .NET developer s 15 lety praxe v designu nábytku. Hledám pozici junior vývojáře."
+    />
+    <meta property="og:image" content="https://janstefko.cz/img/og-image.jpg" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-grid-bg" aria-hidden="true"></div>
-  <div class="hero-viz" aria-hidden="true"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a id="top"></a>
 
-  <div class="hero-code" aria-hidden="true">
-    <div class="hero-code-header">
-      <span></span><span></span><span></span>
-    </div>
-    <span class="ln"><span class="com">// CutOptimizer.cs</span></span>
-    <span class="ln"><span class="kw">public class</span> <span class="fn">Optimizer</span> <span class="pn">{</span></span>
-    <span class="ln">  <span class="kw">public</span> <span class="fn">Plan</span> <span class="fn">Solve</span><span class="pn">(</span></span>
-    <span class="ln">    <span class="fn">List</span><span class="pn">&lt;</span><span class="fn">Piece</span><span class="pn">&gt;</span> pieces<span class="pn">,</span></span>
-    <span class="ln">    <span class="fn">Board</span> board<span class="pn">)</span></span>
-    <span class="ln">  <span class="pn">{</span></span>
-    <span class="ln">    <span class="kw">var</span> waste <span class="pn">=</span> <span class="num">0.0</span><span class="pn">;</span></span>
-    <span class="ln">    <span class="kw">return</span> <span class="kw">new</span> <span class="fn">Plan</span><span class="pn">(...);</span></span>
-    <span class="ln">  <span class="pn">}</span></span>
-    <span class="ln"><span class="pn">}</span></span>
-  </div>
-
-  <div class="container hero-content">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      <span>Ostrava · Otevřen novým příležitostem</span>
-    </div>
-    <h1 class="hero-title">
-      Z konstrukce<br>
-      do <span class="accent">kódu.</span>
-    </h1>
-    <div class="hero-roles">
-      <span class="role primary">Vývojář</span>
-      <span class="sep">/</span>
-      <span class="role">Designér</span>
-      <span class="sep">/</span>
-      <span class="role">Konstruktér</span>
-    </div>
-    <p class="hero-lede">
-      Patnáct let návrhů interiérů, kuchyní a nábytku na míru.
-      Akreditovaná rekvalifikace a devět certifikátů z C# .NET, ASP.NET Core a Reactu za rok.
-      <strong>Hledám pozici junior vývojáře</strong>, ve které využiji obojí.
-    </p>
-    <div class="hero-cta-row">
-      <a href="#work" class="btn btn-primary">Zobrazit projekty</a>
-      <a href="#contact" class="btn btn-ghost">Spojit se</a>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="num"><span class="accent">15</span>+</span>
-      <span class="label">Let v designu</span>
-    </div>
-    <div class="hero-stat">
-      <span class="num"><span class="accent">197</span> h</span>
-      <span class="label">Akreditovaná rekvalifikace</span>
-    </div>
-    <div class="hero-stat">
-      <span class="num"><span class="accent">9</span></span>
-      <span class="label">Certifikátů ITnetwork</span>
-    </div>
-    <div class="hero-stat">
-      <span class="num">'<span class="accent">25</span></span>
-      <span class="label">Start ve vývoji</span>
-    </div>
-  </div>
-</header>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">01 / O mně</div>
-      <h2 class="section-title">Patnáct let v designu.<br>Teď <span class="accent">vývojář.</span></h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-portrait reveal">
-        <img src="img/portrait.jpg" alt="Jan Štefko">
-      </div>
-      <div class="about-body reveal">
-        <div class="about-tag-row">
-          <span class="about-tag primary">Vývojář</span>
-          <span class="about-tag">Designér interiérů</span>
-          <span class="about-tag">Konstruktér nábytku</span>
-        </div>
-        <p>Začínal jsem jako projektant pozemních staveb. Pracoval ve výrobě, vedl tým, řídil zakázky. Od roku 2019 jsem na volné noze jako návrhář interiérů, od dubna 2025 také konstruktér nábytku v <strong>HAST Group s.r.o.</strong></p>
-        <p>V designu interiérů a nábytku jsem dosáhl bodu, kde vím, co potřebuji vědět. Programování mě lákalo dlouho. Loni jsem se rozhodl, že přechod do IT je další logický krok.</p>
-        <p>Za jeden rok jsem absolvoval <strong>akreditovanou rekvalifikaci MŠMT</strong> (197 hodin) a získal devět certifikátů z C# .NET, ASP.NET Core, MS-SQL, JavaScriptu, Reactu a Bootstrapu. Souběžně Udemy: WPF, AZ-900, C# Masterclass. Postavil jsem první funkční webovou aplikaci. Vše při zaměstnání na plný úvazek.</p>
-        <p>Z patnácti let v designu si přináším <strong>myšlení v rozměrech a omezeních</strong>, dotahování věcí do výroby a citlivost pro detail.</p>
-        <div class="about-meta">
-          <div class="about-meta-item">
-            <div class="label">Lokalita</div>
-            <div class="value">Ostrava, CZ</div>
-          </div>
-          <div class="about-meta-item">
-            <div class="label">Status</div>
-            <div class="value">Otevřen pozici junior dev</div>
-          </div>
-          <div class="about-meta-item">
-            <div class="label">Jazyky</div>
-            <div class="value">CS · EN (B1+)</div>
-          </div>
-          <div class="about-meta-item">
-            <div class="label">Vzdělání</div>
-            <div class="value">Bc. ekonomika · SŠ stavební</div>
-          </div>
+    <!-- NAV -->
+    <nav class="nav dark-mode" id="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="nav-mark" aria-label="Nahoru">JŠ_ / Štefko</a>
+        <ul class="nav-links">
+          <li><a href="#about">O mně</a></li>
+          <li><a href="#work">Projekty</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#skills">Dovednosti</a></li>
+          <li><a href="#path">Cesta</a></li>
+        </ul>
+        <button
+          class="nav-burger"
+          id="navBurger"
+          aria-label="Otevřít menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-actions">
+          <a
+            href="docs/CV · Jan Štefko · Junior Developer.pdf"
+            target="_blank"
+            rel="noopener"
+            class="nav-cv"
+            aria-label="Stáhnout CV (PDF)"
+          >
+            <span>CV</span>
+          </a>
+          <a class="nav-cta" href="#contact">Kontakt →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<!-- PROJECTS -->
-<section class="section alt" id="work">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">02 / Projekty</div>
-      <h2 class="section-title">Současný <span class="accent">vývoj.</span></h2>
-    </div>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-viz" aria-hidden="true"></div>
 
-    <div class="projects">
-
-      <!-- TODO APP -->
-      <article class="project reveal">
-        <div class="project-visual stack-imgs todo-bg">
-          <img src="img/todo-app.jpg" alt="TODO App — seznam úkolů">
-          <img src="img/todo-login.jpg" alt="TODO App — přihlášení">
+      <div class="hero-code" aria-hidden="true">
+        <div class="hero-code-header">
+          <span></span><span></span><span></span>
         </div>
-        <div class="project-info">
-          <div class="project-tag">Webová aplikace · 2025</div>
-          <h3 class="project-name">TODO App</h3>
-          <p class="project-subtitle">Správa úkolů s autentizací uživatelů</p>
-          <p class="project-desc">
-            Plnohodnotná webová aplikace pro správu úkolů. Registrace,
-            přihlášení, perzistence v MS-SQL databázi. ASP.NET Core MVC
-            s vlastním layoutem, validací a přístupovou logikou.
-            Důraz na čisté UI a srozumitelné stavy.
-          </p>
-          <div class="project-stack">
-            <span>C# .NET</span>
-            <span>ASP.NET Core MVC</span>
-            <span>Entity Framework</span>
-            <span>MS-SQL</span>
-            <span>HTML / CSS</span>
-          </div>
-          <div class="project-links">
-            <span class="disabled">Live demo · připravuje se</span>
-          </div>
-        </div>
-      </article>
+        <span class="ln"><span class="com">// CutOptimizer.cs</span></span>
+        <span class="ln"
+          ><span class="kw">public async</span> <span class="fn">Task</span
+          ><span class="pn">&lt;</span
+          ><span class="fn">OptimizeCutPlanResponse</span
+          ><span class="pn">&gt;</span> <span class="fn">OptimizeAsync</span
+          ><span class="pn">(</span></span
+        >
+        <span class="ln">
+          <span class="fn">OptimizeCutPlanRequest</span> request<span class="pn"
+            >)</span
+          ></span
+        >
+        <span class="ln"><span class="pn">{</span></span>
+        <span class="ln">
+          <span class="fn">ValidateRequest</span
+          ><span class="pn">(</span>request<span class="pn">);</span></span
+        >
+        <span class="ln">
+          <span class="kw">var</span> material <span class="pn">=</span>
+          <span class="kw">await</span>
+          <span class="fn">GetSheetMaterialAsync</span
+          ><span class="pn">(...);</span></span
+        >
+        <span class="ln">
+          <span class="kw">var</span> panels <span class="pn">=</span>
+          <span class="fn">ExpandAndPreparePanels</span
+          ><span class="pn">(...);</span></span
+        >
+        <span class="ln">
+          <span class="kw">var</span> result <span class="pn">=</span>
+          <span class="fn">PackPanels</span
+          ><span class="pn">(</span>material<span class="pn">,</span>
+          panels<span class="pn">);</span></span
+        >
+        <span class="ln">
+          <span class="kw">return</span> <span class="fn">BuildResponse</span
+          ><span class="pn">(</span>result<span class="pn">);</span></span
+        >
+        <span class="ln"><span class="pn">}</span></span>
+      </div>
 
-      <!-- CUTOPTIMIZER -->
-      <article class="project reveal">
-        <div class="project-visual">
-          <div class="cut-preview" aria-hidden="true">
-            <div class="cut-preview-header">
-              <strong>CUTOptimizer</strong>
-              <span class="badge-running">● RUNNING</span>
+      <div class="container hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span>Ostrava · Otevřen novým příležitostem</span>
+        </div>
+        <h1 class="hero-title">
+          Z konstrukce<br />
+          do <span class="accent">kódu.</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="role primary">Vývojář</span>
+          <span class="sep">/</span>
+          <span class="role">Designér</span>
+          <span class="sep">/</span>
+          <span class="role">Konstruktér</span>
+        </div>
+        <p class="hero-lede">
+          Patnáct let návrhů interiérů a nábytku. Akreditovaná rekvalifikace a
+          devět certifikátů z C# .NET, ASP.NET Core a Reactu za rok.
+          <strong>Hledám pozici junior vývojáře.</strong> Doménová znalost z
+          designu a konstrukce je bonus.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#work" class="btn btn-primary">Zobrazit projekty</a>
+          <a href="#contact" class="btn btn-ghost">Spojit se</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num"><span class="accent">15</span>+</span>
+          <span class="label">Let v designu</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num"><span class="accent">197</span> h</span>
+          <span class="label">Akreditovaná rekvalifikace</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num"><span class="accent">9</span></span>
+          <span class="label">Certifikátů ITnetwork</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num"><span class="accent">2025</span></span>
+          <span class="label">Start ve vývoji</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-num">01 / O mně</div>
+          <h2 class="section-title">
+            Patnáct let v designu.<br />Teď <span class="accent">vývojář.</span>
+          </h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-portrait reveal">
+            <img src="img/portrait.jpg" alt="Jan Štefko" />
+          </div>
+          <div class="about-body reveal">
+            <div class="about-tag-row">
+              <span class="about-tag primary">#vývojář</span>
+              <span class="about-tag">#designér</span>
+              <span class="about-tag">#konstruktér</span>
             </div>
-            <div class="cut-board">
-              <div class="piece a"></div>
-              <div class="piece b"></div>
-              <div class="piece c"></div>
-              <div class="piece d"></div>
-              <div class="piece e"></div>
-            </div>
-            <div class="cut-stats">
-              <div><strong>87.3%</strong>Využití</div>
-              <div><strong class="green">12.7%</strong>Odpad</div>
-              <div><strong>5</strong>Kusů</div>
+            <p>
+              Začínal jsem jako projektant pozemních staveb. Pracoval ve&nbsp;výrobě,
+              vedl tým, řídil zakázky. Od roku 2019 jsem na volné noze jako
+              návrhář interiérů, od dubna 2025 také konstruktér nábytku v
+              <strong>HAST Group s.r.o.</strong>
+            </p>
+            <p>
+              V designu interiérů a nábytku jsem dosáhl bodu, kde vím, co
+              potřebuji vědět. Programování mě lákalo dlouho — první kurz
+              Bootstrap jsem si dal už v roce 2019. Loni jsem se rozhodl, že
+              přechod do IT je další logický krok.
+            </p>
+            <p>
+              Za jeden rok jsem absolvoval
+              <strong>akreditovanou rekvalifikaci MŠMT</strong> (197 hodin) a
+              získal devět certifikátů z C# .NET, ASP.NET Core, MS-SQL,
+              JavaScriptu, Reactu a Bootstrapu. Souběžně Udemy: WPF, AZ-900, C#
+              Masterclass. Postavil jsem první full-stack webovou aplikaci a
+              nasadil ji do Azure cloudu. Vše při zaměstnání na plný úvazek.
+            </p>
+            <p>
+              Z patnácti let v designu si přináším
+              <strong>myšlení v rozměrech a&nbsp;omezeních</strong>, dotahování věcí
+              do výroby a citlivost pro detail.
+            </p>
+            <div class="about-meta">
+              <div class="about-meta-item">
+                <div class="label">Lokalita</div>
+                <div class="value">Ostrava, CZ</div>
+              </div>
+              <div class="about-meta-item">
+                <div class="label">Status</div>
+                <div class="value">Otevřen pozici junior dev</div>
+              </div>
+              <div class="about-meta-item">
+                <div class="label">Jazyky</div>
+                <div class="value">CS · EN (B1+)</div>
+              </div>
+              <div class="about-meta-item">
+                <div class="label">Vzdělání</div>
+                <div class="value">Bc. Ekonomie a management · SŠ stavební</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="project-info">
-          <div class="project-tag">Aplikace · 2026 · Ve vývoji</div>
-          <h3 class="project-name">
-            CUTOptimizer
-            <span class="coming-badge">Brzy</span>
-          </h3>
-          <p class="project-subtitle">Optimalizace nářezových plánů pro truhlářskou výrobu</p>
-          <p class="project-desc">
-            Aplikace na pomezí dvou světů. Řeší typický problém truhlářské
-            výroby — efektivní rozřez plošných materiálů s minimálním
-            odpadem. Spojuje doménovou znalost z patnácti let v oboru
-            s nově nabytými dovednostmi v programování. Navrženo tak,
-            aby bylo užitečné pro běžnou praxi.
-          </p>
-          <div class="project-stack">
-            <span>C# .NET</span>
-            <span>WPF</span>
-            <span>Algoritmy / Heuristiky</span>
-          </div>
-          <div class="project-links">
-            <span class="disabled">První build · Q2 2026</span>
-          </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section dark" id="work">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-num">02 / Projekty</div>
+          <h2 class="section-title">
+            Současný <span class="accent">vývoj.</span>
+          </h2>
         </div>
-      </article>
 
-    </div>
-  </div>
-</section>
+        <div class="projects">
+          <!-- TODO APP -->
+          <article class="project reveal">
+            <div class="project-visual todo-bg full-img">
+              <img src="img/todo-app.jpg" alt="TODO App — seznam úkolů">
+            </div>
+            <div class="project-info">
+              <div class="project-tag">Full-stack webová aplikace · 2025</div>
+              <h3 class="project-name">TODO App</h3>
+              <p class="project-subtitle">
+                Multi-user správa úkolů s JWT autentizací
+              </p>
+              <p class="project-desc">
+                Plnohodnotná full-stack aplikace pro správu úkolů. Backend v
+                ASP.NET Core 8 Web API s JWT autentizací a ASP.NET Identity.
+                Frontend v Reactu s Vite a Tailwindem. Persistence v Azure SQL
+                Database, deploy na Azure App Service a Static Web Apps. Vlastní
+                doména, automatický CI/CD přes GitHub Actions, unit testy přes
+                xUnit + Moq.
+              </p>
+              <div class="project-stack">
+                <span>C# / .NET 8</span>
+                <span>ASP.NET Core Web API</span>
+                <span>JWT + Identity</span>
+                <span>EF Core</span>
+                <span>Azure SQL</span>
+                <span>React 19</span>
+                <span>Tailwind</span>
+                <span>xUnit</span>
+              </div>
+              <div class="project-links ">
+                <a
+                  href="https://todo.janstefko.cz"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-links-demo"
+                  >Live demo</a
+                >
+                <a
+                  href="https://github.com/JanStefko/TODOApp.Backend"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-links-a"
+                  >Backend repo</a
+                >
+                <a
+                  href="https://github.com/JanStefko/TODOApp.Frontend"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-links-a"
+                  >Frontend repo</a
+                >
+              </div>
+            </div>
+          </article>
 
-<!-- DESIGN GALLERY -->
-<section class="section" id="design">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">03 / Designérská práce</div>
-      <h2 class="section-title">Patnáct let<br>v <span class="accent">interiéru.</span></h2>
-    </div>
-    <p class="design-intro reveal">
-      Vybrané vizualizace z poslední doby — návrhy kuchyní, obytných prostor a kanceláří.
-      Modelováno ve SketchUpu, renderováno v Enscape, případně 3DS Max + V-Ray, D5 Render
-      nebo Twinmotion. Tahle část kariéry mi dala oko pro proporce, materiál a světlo —
-      věci, které dnes přenáším do návrhu uživatelských rozhraní.
-    </p>
-    <div class="gallery reveal">
-      <figure class="g1"><img src="img/viz-2.jpg" alt="Kuchyň s ostrůvkem" loading="lazy"><figcaption>Kuchyň s ostrůvkem · 2025</figcaption></figure>
-      <figure class="g2"><img src="img/viz-4.jpg" alt="Skandinávská kuchyň" loading="lazy"><figcaption>Skandinávská kuchyň</figcaption></figure>
-      <figure class="g3"><img src="img/viz-6.jpg" alt="Kuchyňská linka pod krovem" loading="lazy"><figcaption>Loft kuchyň</figcaption></figure>
-      <figure class="g4"><img src="img/viz-7.jpg" alt="Pracovna" loading="lazy"><figcaption>Privátní kancelář</figcaption></figure>
-      <figure class="g5"><img src="img/viz-5.jpg" alt="Vestavěná skříň" loading="lazy"><figcaption>Vestavěné úložiště se spotřebiči</figcaption></figure>
-    </div>
-  </div>
-</section>
+          <!-- CUTOPTIMIZER -->
+          <article class="project reveal">
+            <div class="project-visual">
+              <div class="cut-preview cut-preview-mono" aria-hidden="true">
+                <div class="cut-preview-header">
+                  <strong>CUTOptimizer</strong>
+                  <span class="badge-running">● RUNNING</span>
+                </div>
+                <div class="cut-preview-meta">
+                  <span>Sheet: 2800 × 2070 mm</span>
+                  <span>Kerf: 4.4 mm</span>
+                </div>
+                <div class="cut-board cut-board-mono">
+                  <div class="piece m1" data-label="A1"></div>
+                  <div class="piece m2" data-label="A2"></div>
+                  <div class="piece m3" data-label="B1"></div>
+                  <div class="piece m4" data-label="B2"></div>
+                  <div class="piece m5" data-label="C1"></div>
+                  <div class="piece m6" data-label="C2"></div>
+                  <div class="piece m7" data-label="D1"></div>
+                  <!-- Saw lines (dimension marks) -->
+                  <div class="saw-line saw-h" style="top: 38%"></div>
+                  <div class="saw-line saw-v" style="left: 52%"></div>
+                </div>
+                <div class="cut-stats">
+                  <div>
+                    <strong>87.3<span class="unit">%</span></strong
+                    >Využití
+                  </div>
+                  <div>
+                    <strong>12.7<span class="unit">%</span></strong
+                    >Odpad
+                  </div>
+                  <div><strong>7</strong>Kusů</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag">Aplikace · 2026 · Ve vývoji</div>
+              <h3 class="project-name">
+                CUTOptimizer
+                <span class="coming-badge">Brzy</span>
+              </h3>
+              <p class="project-subtitle">
+                Optimalizace nářezových plánů pro truhlářskou výrobu
+              </p>
+              <p class="project-desc">
+                Aplikace na pomezí dvou světů. Řeší typický problém truhlářské
+                výroby — efektivní rozřez plošných materiálů s minimálním
+                odpadem. Spojuje doménovou znalost z patnácti let v oboru s nově
+                nabytými dovednostmi v programování. Navrženo tak, aby bylo
+                užitečné pro běžnou praxi.
+              </p>
+              <div class="project-stack">
+                <span>C# .NET</span>
+                <span>React</span>
+                <span>Algoritmy / Heuristiky</span>
+              </div>
+              <div class="project-links">
+                <span class="disabled">První build · Q2 2026</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- SKILLS -->
-<section class="section alt" id="skills">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">04 / Dovednosti</div>
-      <h2 class="section-title">Dva sety <span class="accent">nástrojů.</span></h2>
-    </div>
-    <div class="skills-grid">
+    <!-- DESIGN GALLERY -->
+    <section class="section" id="design">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-num">03 / Designérská práce</div>
+          <h2 class="section-title">
+            Patnáct let<br />v <span class="accent">interiéru.</span>
+          </h2>
+        </div>
+        <p class="design-intro reveal">
+          Vybrané vizualizace z poslední doby — návrhy kuchyní, koupelen,
+          zádveří, ložnic a komerčních prostor. Modelováno ve SketchUpu a 3DS
+          Max, renderováno v Enscape, V-Ray, D5 Render a Twinmotinu. Tahle část
+          kariéry mi dala oko pro&nbsp;proporce, materiál a světlo — věci, které dnes
+          přenáším do&nbsp;návrhu uživatelských rozhraní.
+        </p>
 
+        <!-- Top 6 - vidět hned -->
+        <div class="gallery gallery-top reveal">
+          <figure class="gx" data-full="img/gallery-kuchyne-loft.jpg">
+            <img
+              src="img/gallery-kuchyne-loft.jpg"
+              alt="Loft kuchyň"
+              loading="lazy"
+            />
+            <figcaption>Loft kuchyň</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-koupelna.jpg">
+            <img
+              src="img/gallery-koupelna.jpg"
+              alt="Dřevěná koupelna"
+              loading="lazy"
+            />
+            <figcaption>Dřevěná koupelna</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-jidelna.jpg">
+            <img
+              src="img/gallery-jidelna.jpg"
+              alt="Firemní jídelna"
+              loading="lazy"
+            />
+            <figcaption>Firemní jídelna · Komerční</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-uloziste.jpg">
+            <img
+              src="img/gallery-uloziste.jpg"
+              alt="Kuchyně v rodinném domě"
+              loading="lazy"
+            />
+            <figcaption>Kuchyně v rodinném domě</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-pruhled.jpg">
+            <img
+              src="img/gallery-pruhled.jpg"
+              alt="Soukromé wellness"
+              loading="lazy"
+            />
+            <figcaption>Soukromé wellness</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-zadveri-db.jpg">
+            <img
+              src="img/gallery-zadveri-db.jpg"
+              alt="Zádveří s vestavěnou skříní"
+              loading="lazy"
+            />
+            <figcaption>Zádveří · vestavěná skříň</figcaption>
+          </figure>
+        </div>
+
+        <!-- Hidden: round 1 (po prvním rozkliknutí) -->
+        <div class="gallery gallery-more gallery-hidden" id="gallery-more-1">
+          <figure class="gx" data-full="img/gallery-kuchyne-ostruvek.jpg">
+            <img
+              src="img/gallery-kuchyne-ostruvek.jpg"
+              alt="Minimalistická kuchyně"
+              loading="lazy"
+            />
+            <figcaption>Minimalistická kuchyně</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-knihovna.jpg">
+            <img
+              src="img/gallery-knihovna.jpg"
+              alt="Bílá kuchyně"
+              loading="lazy"
+            />
+            <figcaption>Bílá kuchyně</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-obyvak.jpg">
+            <img
+              src="img/gallery-obyvak.jpg"
+              alt="Obývák s kachlovými kamny"
+              loading="lazy"
+            />
+            <figcaption>Obývák · venkovský styl</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-loznice-rk.jpg">
+            <img
+              src="img/gallery-loznice-rk.jpg"
+              alt="Knihovna v ložnici"
+              loading="lazy"
+            />
+            <figcaption>Knihovna v ložnici</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-kancelar.jpg">
+            <img
+              src="img/gallery-kancelar.jpg"
+              alt="Kancelář ředitele"
+              loading="lazy"
+            />
+            <figcaption>Kancelář ředitele</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-kuchyne-skandi.jpg">
+            <img
+              src="img/gallery-kuchyne-skandi.jpg"
+              alt="Skandinávská kuchyň"
+              loading="lazy"
+            />
+            <figcaption>Skandinávská kuchyň</figcaption>
+          </figure>
+          
+          <figure class="gx" data-full="img/gallery-kuchyne-ld.jpg">
+            <img
+              src="img/gallery-kuchyne-ld.jpg"
+              alt="Moderní kuchyň"
+              loading="lazy"
+            />
+            <figcaption>Moderní kuchyň</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-kuchyne-ph.jpg">
+            <img
+              src="img/gallery-kuchyne-ph.jpg"
+              alt="Šedá kuchyně"
+              loading="lazy"
+            />
+            <figcaption>Šedá kuchyně</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-p2.jpg">
+            <img
+              src="img/gallery-p2.jpg"
+              alt="Moderní kuchyň s ostrůvkem"
+              loading="lazy"
+            />
+            <figcaption>Hostovský pokoj</figcaption>
+          </figure>
+        </div>
+
+        <!-- Toggle 1 -->
+        <button
+          class="gallery-toggle"
+          data-target="gallery-more-1"
+          aria-expanded="false"
+        >
+          <span class="toggle-text-show">Zobrazit více</span>
+          <span class="toggle-text-hide">Skrýt</span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        <!-- Hidden: round 2 (po druhém rozkliknutí) -->
+        <div class="gallery gallery-more gallery-hidden" id="gallery-more-2">
+          <figure class="gx" data-full="img/gallery-zadveri-tc.jpg">
+            <img
+              src="img/gallery-zadveri-tc.jpg"
+              alt="Industriální zádveří"
+              loading="lazy"
+            />
+            <figcaption>Industriální zádveří</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-zadveri-mh.jpg">
+            <img
+              src="img/gallery-zadveri-mh.jpg"
+              alt="Zádveří pod schody"
+              loading="lazy"
+            />
+            <figcaption>Zádveří · prostor pod schodištěm</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-garsonka-7.jpg">
+            <img
+              src="img/gallery-garsonka-7.jpg"
+              alt="Garsonka — obývací zóna"
+              loading="lazy"
+            />
+            <figcaption>Garsonka · zádveří</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-garsonka-5.jpg">
+            <img
+              src="img/gallery-garsonka-5.jpg"
+              alt="Garsonka — jídelní stůl"
+              loading="lazy"
+            />
+            <figcaption>Garsonka · jídelní stůl</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-loznice-pl.jpg">
+            <img
+              src="img/gallery-loznice-pl.jpg"
+              alt="Jasanová ložnice"
+              loading="lazy"
+            />
+            <figcaption>Ložnice · jasanová treláž</figcaption>
+          </figure>
+          <figure class="gx" data-full="img/gallery-navrh.jpg">
+            <img
+              src="img/gallery-navrh.jpg"
+              alt="Kuchyňka"
+              loading="lazy"
+            />
+            <figcaption>Kuchyňka · Office</figcaption>
+          </figure>
+          
+        </div>
+
+        <!-- Toggle 2 -->
+        <button
+          class="gallery-toggle gallery-toggle-2 gallery-toggle-hidden"
+          data-target="gallery-more-2"
+          aria-expanded="false"
+        >
+          <span class="toggle-text-show">Zobrazit ještě více</span>
+          <span class="toggle-text-hide">Skrýt</span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Zavřít">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <button class="lightbox-prev" aria-label="Předchozí">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="lightbox-next" aria-label="Další">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <img class="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- SKILLS -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-num">04 / Dovednosti</div>
+          <h2 class="section-title">
+            Dva sety <span class="accent">nástrojů.</span>
+          </h2>
+        </div>
+        <div class="skills-grid">
+          <!-- VÝVOJ -->
       <div class="skill-block primary reveal">
         <div class="skill-block-head">
           <h3>Vývoj</h3>
           <span class="skill-meta">Junior · aktivně</span>
         </div>
         <ul class="skill-list">
-          <li><span class="name">C# / .NET</span><span class="level">Základy + OOP</span></li>
-          <li><span class="name">ASP.NET Core MVC</span><span class="level">Základy</span></li>
-          <li><span class="name">ASP.NET Core Web API</span><span class="level">Základy</span></li>
-          <li><span class="name">WPF</span><span class="level">Základy</span></li>
-          <li><span class="name">MS-SQL / T-SQL</span><span class="level">Základy</span></li>
-          <li><span class="name">Entity Framework</span><span class="level">Základy</span></li>
+          <li><span class="name">C# / .NET 8</span><span class="level">OOP, LINQ</span></li>
+          <li><span class="name">ASP.NET Core Web API</span><span class="level">REST, DI, JWT</span></li>
+          <li><span class="name">Entity Framework Core</span><span class="level">Migrace, Repository</span></li>
+          <li><span class="name">SQL Server / Azure SQL</span><span class="level">CRUD</span></li>
+          <li><span class="name">React 19 + Vite</span><span class="level">Základy - Hooks, Routing</span></li>
+          <li><span class="name">HTML / CSS / Bootstrap / Tailwind</span><span class="level">Středně</span></li>
           <li><span class="name">JavaScript</span><span class="level">Základy</span></li>
-          <li><span class="name">React</span><span class="level">Základy</span></li>
-          <li><span class="name">HTML / CSS / Bootstrap</span><span class="level">Středně</span></li>
-          <li><span class="name">Git</span><span class="level">Základy</span></li>
-          <li><span class="name">Azure (AZ-900)</span><span class="level">Základy</span></li>
+          <li><span class="name">WPF</span><span class="level">Základy</span></li>
+          <li><span class="name">xUnit + Moq</span><span class="level">Unit testy</span></li>
+          <li><span class="name">Git / GitHub</span><span class="level">Workflow, PR</span></li>
+          <li><span class="name">Azure (App Service, SQL, SWA)</span><span class="level">Deploy, CI/CD</span></li>
+          <li><span class="name">AZ-900</span><span class="level">Cloud fundamentals</span></li>
         </ul>
       </div>
 
+      <!-- NÁVRH & KONSTRUKCE -->
       <div class="skill-block reveal">
         <div class="skill-block-head">
           <h3>Návrh & konstrukce</h3>
           <span class="skill-meta">15 let · pokročilý</span>
         </div>
         <ul class="skill-list">
-          <li><span class="name">SketchUp</span><span class="level">Aktivní licence</span></li>
-          <li><span class="name">Enscape</span><span class="level">Aktivní licence</span></li>
-          <li><span class="name">D5 Render</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">Twinmotion</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">3DS Max + V-Ray</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">Artlantis</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">IMOS</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">Archicad</span><span class="level">Pokročilý</span></li>
-          <li><span class="name">CNC programy</span><span class="level">Aktivně</span></li>
-          <li><span class="name">Návrh interiérů & nábytku</span><span class="level">15 let</span></li>
+          <li><span class="name">SketchUp 3D modelování</span><span class="level"> Pokročilý</span></li>
+          <li><span class="name">Enscape · D5 · TwinMotion</span><span class="level">Realtime vizualizace</span></li>
+          <li><span class="name">3DS Max + V-Ray</span><span class="level">Středně</span></li>
+          <li><span class="name">Archicad</span><span class="level">12 let</span></li>
+          <li><span class="name">IMOS CAD/CAM</span><span class="level">CNC programování</span></li>
+          <li><span class="name">Návrh interiérů & nábytku</span><span class="level">9 let</span></li>
+          <li><span class="name">Příprava výroby</span><span class="level">Rozpočet + nákup</span></li>
           <li><span class="name">Stavební dokumentace</span><span class="level">DÚR · DSP</span></li>
+          <li><span class="name">Vedení týmu</span><span class="level">5+ lidí</span></li>
+          <li><span class="name">Plánování zakázek</span><span class="level">Vedoucí výroby</span></li>
+          <li><span class="name">Ekonomika výroby</span><span class="level">Kalkulace zakázek</span></li>
         </ul>
       </div>
 
-    </div>
-  </div>
-</section>
 
-<!-- TIMELINE -->
-<section class="section" id="path">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">05 / Profesní cesta</div>
-      <h2 class="section-title">Od projektanta<br>k <span class="accent">vývojáři.</span></h2>
-    </div>
-
-    <div class="timeline reveal">
-
-      <div class="tl-event current">
-        <div class="tl-date">04 / 2025 — dnes</div>
-        <div class="tl-content">
-          <h4>HAST Group s.r.o.</h4>
-          <div class="tl-role">Konstruktér a designér nábytku</div>
-          <p>Návrhy ve SketchUpu a IMOSu, dokumentace pro schválení i pro výrobu, příprava CNC programů.</p>
         </div>
       </div>
+    </section>
 
-      <div class="tl-event current">
-        <div class="tl-date">03 / 2025 — 07 / 2025</div>
-        <div class="tl-content">
-          <h4>ITnetwork — Tvorba www aplikací</h4>
-          <div class="tl-role">Akreditovaná rekvalifikace MŠMT · 197 hodin</div>
-          <p>C# .NET, OOP, kolekce a LINQ, ASP.NET Core MVC, Web API, MS-SQL, JavaScript, React, Bootstrap, Git, testování. Souběžně Udemy: WPF, AZ-900, C# Masterclass.</p>
+    <!-- TIMELINE -->
+    <section class="section" id="path">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-num">05 / Profesní cesta</div>
+          <h2 class="section-title">
+            Od projektanta<br />k <span class="accent">vývojáři.</span>
+          </h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="tl-event current">
+            <div class="tl-date">04 / 2025 — 04 / 2026</div>
+            <div class="tl-content">
+              <h4>HAST Group s.r.o.</h4>
+              <div class="tl-role">Designer a konstruktér nábytku</div>
+              <p>
+                Řešení návrhu, schvalovací dokumentace, konstrukce a&nbsp;příprava
+                výroby pro lidi i CNC stroje. Práce ve&nbsp;SketchUpu a&nbsp;IMOSu,
+                příprava CNC programů.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event current">
+            <div class="tl-date">03 / 2025 — 07 / 2025</div>
+            <div class="tl-content">
+              <h4>ITnetwork — Tvorba www aplikací</h4>
+              <div class="tl-role">
+                Akreditovaná rekvalifikace MŠMT · 197 hodin · 9 certifikátů
+              </div>
+              <p>
+                Full stack developer, C# .NET, OOP, kolekce a LINQ, ASP.NET Core MVC, Web API, MS-SQL,
+                JavaScript, React, Bootstrap, Git, testování. Souběžně Udemy:
+                WPF, AZ-900, C# Masterclass.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event">
+            <div class="tl-date">2019 — dnes</div>
+            <div class="tl-content">
+              <h4>Designer interiérů — OSVČ</h4>
+              <div class="tl-role">Vlastní praxe</div>
+              <p>
+                Návrhy rezidenčních a komerčních interiérů, kuchyně a nábytek na
+                míru, příprava výroby. 2019 první kontakt s&nbsp;programováním —
+                Bootstrap kurz.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event">
+            <div class="tl-date">2017 — 2019</div>
+            <div class="tl-content">
+              <h4>Truhlářství ZASA s.r.o.</h4>
+              <div class="tl-role">Vedoucí výroby</div>
+              <p>
+                Návrhy a konzultace, kalkulace, smluvní dokumentace, konstrukce, nákup
+                materiálů, normování a plánování výroby.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event">
+            <div class="tl-date">2016 — 2017</div>
+            <div class="tl-content">
+              <h4>RESIDOMO Služby s.r.o.</h4>
+              <div class="tl-role">Provozní technik</div>
+              <p>
+                Realizace zakázek v rámci údržby bytových domů, vedení týmu pěti lidí.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event">
+            <div class="tl-date">2012 — 2016</div>
+            <div class="tl-content">
+              <h4>Jiří Štefko — Dýhy Štefko</h4>
+              <div class="tl-role">Výroba dýhovaných komponent</div>
+              <p>
+                Rodinný podnik, dýhování na zakázku, výroba dýhovaných nábytkových komponent.
+              </p>
+            </div>
+          </div>
+
+          <div class="tl-event">
+            <div class="tl-date">2009 — 2012</div>
+            <div class="tl-content">
+              <h4>Ing. David Meinhard</h4>
+              <div class="tl-role">Projektant pozemních staveb</div>
+              <p>
+                Projektant pozemního stavitelství, dokumentace stupně DÚR a
+                DSP, zastupování klienta při územním a stavebním řízení.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div style="margin-top: 5rem">
+          <div class="section-header reveal" style="margin-bottom: 2.5rem">
+            <div class="section-num">06 / Vzdělání</div>
+            <h2 class="section-title">
+              Kontinuální <span class="accent">vzdělávání.</span>
+            </h2>
+          </div>
+          <div class="edu-list reveal">
+            <div class="edu-item">
+              <div class="edu-tag">Rekvalifikace · 2025</div>
+              <h4>Tvorba www aplikací</h4>
+              <p>
+                ITnetwork s.r.o. · Akreditace MŠMT · 197 hodin · 9 dílčích
+                certifikátů
+              </p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-tag">Kurzy · 2025–2026</div>
+              <h4>Udemy: WPF, AZ-900, C# Masterclass</h4>
+              <p>Pokračující sebevzdělávání teoretické i praktické</p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-tag">VŠ · 2013–2016</div>
+              <h4>Bc. Ekonomika a management</h4>
+              <p>
+                Vysoká škola podnikání a práva, a.s. · obor Podnikání · Diplom s&nbsp;vyznamenáním
+              </p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-tag">SŠ · 2004–2009</div>
+              <h4>Pozemní stavitelství</h4>
+              <p>Střední průmyslová škola stavební Ostrava · maturita</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="tl-event">
-        <div class="tl-date">2019 — dnes</div>
-        <div class="tl-content">
-          <h4>Designer interiérů — OSVČ</h4>
-          <div class="tl-role">Vlastní praxe</div>
-          <p>Návrhy rezidenčních a komerčních interiérů, kuchyně a nábytek na míru, příprava výroby.</p>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="contact-num">07 / Kontakt</div>
+          <h2 class="contact-title">
+            Otevřen <span class="accent">spolupráci.</span>
+          </h2>
+          <p class="contact-sub">
+            Hledáte junior vývojáře s atypickým profilem? Ozvěte se. Reaguji do
+            24 hodin.
+          </p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:jan.stefko@email.cz">
+            <div class="contact-row">
+              <span class="label">E-mail</span>
+              <span class="value">jan.stefko@email.cz</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="contact-item" href="tel:+420774564620">
+            <div class="contact-row">
+              <span class="label">Telefon</span>
+              <span class="value">+420 774 564 620</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a
+            class="contact-item"
+            href="https://www.linkedin.com/in/jan-%C5%A1tefko-604263304/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-row">
+              <span class="label">LinkedIn</span>
+              <span class="value">/in/jan-štefko</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a
+            class="contact-item"
+            href="https://github.com/JanStefko"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-row">
+              <span class="label">GitHub</span>
+              <span class="value">/JanStefko</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a
+            class="contact-item"
+            href="https://www.janstefko.cz"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-row">
+              <span class="label">Web</span>
+              <span class="value">janstefko.cz</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="tl-event">
-        <div class="tl-date">2017 — 2019</div>
-        <div class="tl-content">
-          <h4>Truhlářství ZASA s.r.o.</h4>
-          <div class="tl-role">Vedoucí výroby</div>
-          <p>Návrhy, kalkulace, smluvní dokumentace, konstrukce, nákup materiálů, normování a plánování výroby.</p>
-        </div>
+    <footer>
+      <div class="container footer-inner">
+        <span>© 2026 Jan Štefko</span>
+        <span>Postaveno s pozorností k detailu</span>
       </div>
+    </footer>
 
-      <div class="tl-event">
-        <div class="tl-date">2016 — 2017</div>
-        <div class="tl-content">
-          <h4>RESIDOMO Služby s.r.o.</h4>
-          <div class="tl-role">Provozní technik</div>
-          <p>Realizace zakázek v rámci údržby bytových domů, vedení týmu pěti lidí.</p>
-        </div>
-      </div>
-
-      <div class="tl-event">
-        <div class="tl-date">2012 — 2016</div>
-        <div class="tl-content">
-          <h4>Jiří Štefko — Dýhy Štefko</h4>
-          <div class="tl-role">Výroba dýhovaných komponent</div>
-          <p>Dýhování na zakázku, výroba dýhovaných nábytkových komponent.</p>
-        </div>
-      </div>
-
-      <div class="tl-event">
-        <div class="tl-date">2009 — 2012</div>
-        <div class="tl-content">
-          <h4>Ing. David Meinhard</h4>
-          <div class="tl-role">Projektant pozemních staveb</div>
-          <p>Návrhy rekonstrukcí a novostaveb, projektová dokumentace DÚR a DSP, zastupování klienta při územním a stavebním řízení.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- EDUCATION -->
-    <div style="margin-top: 5rem;">
-      <div class="section-header reveal" style="margin-bottom: 2.5rem;">
-        <div class="section-num">06 / Vzdělání</div>
-        <h2 class="section-title">Kontinuální <span class="accent">vzdělávání.</span></h2>
-      </div>
-      <div class="edu-list reveal">
-        <div class="edu-item">
-          <div class="edu-tag">Rekvalifikace · 2025</div>
-          <h4>Tvorba www aplikací</h4>
-          <p>ITnetwork s.r.o. · Akreditace MŠMT · 197 hodin · 9 dílčích certifikátů</p>
-        </div>
-        <div class="edu-item">
-          <div class="edu-tag">Kurzy · 2025–2026</div>
-          <h4>Udemy: WPF, AZ-900, C# Masterclass</h4>
-          <p>Pokračující sebevzdělávání · WPF Guide for Beginners (16 h)</p>
-        </div>
-        <div class="edu-item">
-          <div class="edu-tag">VŠ · 2013–2016</div>
-          <h4>Bc. Ekonomika a management</h4>
-          <p>Vysoká škola podnikání a práva, a.s. · obor Podnikání · Ostrava</p>
-        </div>
-        <div class="edu-item">
-          <div class="edu-tag">SŠ · 2004–2009</div>
-          <h4>Pozemní stavitelství</h4>
-          <p>Střední průmyslová škola stavební · maturita · Ostrava</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container contact-grid">
-    <div>
-      <div class="contact-num">07 / Kontakt</div>
-      <h2 class="contact-title">Otevřen <span class="accent">spolupráci.</span></h2>
-      <p class="contact-sub">Hledáte junior vývojáře s atypickým profilem? Ozvěte se. Reaguji do 24 hodin.</p>
-    </div>
-    <div class="contact-list">
-      <a class="contact-item" href="mailto:jan.stefko@email.cz">
-        <div class="contact-row">
-          <span class="label">E-mail</span>
-          <span class="value">jan.stefko@email.cz</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="contact-item" href="tel:+420774564620">
-        <div class="contact-row">
-          <span class="label">Telefon</span>
-          <span class="value">+420 774 564 620</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="contact-item" href="#" target="_blank" rel="noopener" data-edit="LinkedIn URL">
-        <div class="contact-row">
-          <span class="label">LinkedIn</span>
-          <span class="value">/in/jan-stefko</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="contact-item" href="#" target="_blank" rel="noopener" data-edit="GitHub URL">
-        <div class="contact-row">
-          <span class="label">GitHub</span>
-          <span class="value">/jan-stefko</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="contact-item" href="https://www.janstefko.cz" target="_blank" rel="noopener">
-        <div class="contact-row">
-          <span class="label">Web</span>
-          <span class="value">janstefko.cz</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-inner">
-    <span>© 2026 Jan Štefko</span>
-    <span>Postaveno s pozorností k detailu</span>
-  </div>
-</footer>
-
-<script src="js/script.js" defer></script>
-
-</body>
+    <script src="js/script.js" defer></script>
+  </body>
 </html>

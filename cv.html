@@ -189,6 +189,7 @@ html, body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 1mm;
+  margin-top: 1mm;
 }
 .sidebar-list li .value {
   color: white;
@@ -213,6 +214,7 @@ html, body {
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.04em;
   text-align: right;
+  margin-top: 3px;
 }
 
 .lang-row {
@@ -245,13 +247,13 @@ html, body {
 
 .profile-block {
   margin-bottom: 5mm; 
-  margin-top: 7mm;
-  padding-bottom: 5mm;
-  border-bottom: 1px solid #e5e5e5;
+  margin-top: 8mm;
+  padding-bottom: 0mm;
+ 
 }
 .profile-block p {
   font-size: 9.5pt;
-  line-height: 1.55;
+  line-height: 1.5;
   color: #2a2a2a;
 }
 .profile-block strong { font-weight: 600; color: #0a0a0c; }
@@ -263,7 +265,7 @@ html, body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #ff5e1a;
-  margin: 5mm 0 3mm;
+  margin-bottom: 2mm;
   display: flex;
   align-items: center;
   gap: 3mm;
@@ -287,8 +289,7 @@ html, body {
   justify-content: space-between;
   align-items: baseline;
   gap: 3mm;
-  margin-bottom: 1mm;
-  margin-top: 4mm;
+  
 }
 .job-title {
   font-family: 'Geist', sans-serif;
@@ -296,6 +297,7 @@ html, body {
   font-size: 10pt;
   color: #0a0a0c;
   letter-spacing: -0.01em;
+  margin-bottom: 1mm;
 }
 .job-date {
   font-family: 'JetBrains Mono', monospace;
@@ -308,17 +310,15 @@ html, body {
   font-style: italic;
   font-size: 8.5pt;
   color: #555;
-  margin-bottom: 1.5mm;
+  margin-bottom: 0.5mm;
 }
 .job-desc {
   font-size: 8.5pt;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #333;
 }
 .job-desc ul {
   list-style: none;
-  padding-left: 0;
-  margin-bottom: 3mm;
 }
 .job-desc li {
   position: relative;
@@ -443,40 +443,33 @@ html, body {
     <h2>Vývojářské dovednosti</h2>
     <div class="skill-row">
       <span class="name">C# / .NET 8</span>
-      <span class="level-text">OOP, LINQ, async</span>
+      <span class="level-text">OOP</span>
     </div>
     <div class="skill-row">
       <span class="name">ASP.NET Core Web API</span>
-      <span class="level-text">REST, DI, JWT, Identity</span>
+      <span class="level-text">REST, Identity</span>
     </div>
     <div class="skill-row">
       <span class="name">Entity Framework Core</span>
-      <span class="level-text">Migrace, Repository</span>
+      <span class="level-text">SQL Server, SQLite</span>
     </div>
     <div class="skill-row">
-      <span class="name">SQL Server / Azure SQL</span>
-      <span class="level-text">CRUD, joins</span>
+      <span class="name">React</span>
+      <span class="level-text">Hooks, Routing</span>
     </div>
     <div class="skill-row">
-      <span class="name">React 19 + Vite</span>
-      <span class="level-text">Hooks, Context, Routing</span>
-    </div>
-    <div class="skill-row">
-      <span class="name">JavaScript / HTML / CSS</span>
+      <span class="name">HTML / CSS / JS</span>
       <span class="level-text">Tailwind, Bootstrap</span>
     </div>
     <div class="skill-row">
       <span class="name">Azure</span>
-      <span class="level-text">App Service, SQL, SWA, DNS</span>
+      <span class="level-text">App Service, Static App </span>
     </div>
     <div class="skill-row">
       <span class="name">Git / GitHub</span>
-      <span class="level-text">Workflow, PR, Actions</span>
+      <span class="level-text">Commit, branch, PR</span>
     </div>
-    <div class="skill-row">
-      <span class="name">xUnit + Moq</span>
-      <span class="level-text">Unit testy</span>
-    </div>
+
 
     <h2>Jazyky</h2>
     <div class="lang-row">
@@ -512,13 +505,48 @@ html, body {
     <div class="profile-block">
       <h2>Profil</h2>
       <p>
-        <strong>Junior C# .NET vývojář</strong> s patnáctiletou praxí v designu interiérů
+        <strong>Junior C# .NET vývojář.</strong> Předtím mnoho let v designu interiérů
         a konstrukci nábytku. Po roční rekvalifikaci a samostudiu jsem postavil první
         full-stack aplikaci a nasadil ji do Azure cloudu. Hledám pozici junior
         vývojáře, kde mohu uplatnit znalosti z C# .NET, ASP.NET Core a React, a kde je
         doménová znalost designu a konstrukce přidanou hodnotou.
       </p>
     </div>
+
+        <h2>Vývojářské projekty</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">TODO App  ·  full-stack v produkci</span>
+        <span class="job-date">2026</span>
+      </div>
+      <div class="job-desc">
+        <ul>
+          <li>Multi-user správa úkolů s JWT autentizací.
+          ASP.NET Core 8 Web API, EF Core, </br>React 19, Azure SQL
+          Deploy na Azure App Service, CI/CD GitHub Actions.
+          </br>todo.janstefko.cz  ·  github.com/JanStefko/TODOApp.Backend</li>
+        </ul>
+      </div>
+    </div>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">CUTOptimizer  ·  SaaS pro truhláře (ve vývoji)</span>
+        <span class="job-date">2026</span>
+      </div>
+      <div class="job-desc">
+        <ul>
+          <li>ASP.NET Core · React · Azure · github.com/JanStefko/CUTOptimizer.Backend.</br>
+            Aplikace s reálným využitím ve výrobě.
+
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+
+
 
     <h2>Pracovní zkušenosti</h2>
 
@@ -527,11 +555,10 @@ html, body {
         <span class="job-title">HAST Group s.r.o.</span>
         <span class="job-date">04 / 2025 — 04 / 2026</span>
       </div>
-      <div class="job-role">Designer a konstruktér nábytku</div>
+      <div class="job-role">Designer a konstruktér</div>
       <div class="job-desc">
         <ul>
-          <li>Návrh nábytku, schvalovací dokumentace, konstrukce</li>
-          <li>Příprava výroby pro lidi i CNC stroje (IMOS, SketchUp)</li>
+          <li>Návrhy nábytku + konstrukce. Příprava výroby pro lidi i CNC stroje.</li>
           <li>Práce na mezinárodních komerčních projektech</li>
         </ul>
       </div>
@@ -546,7 +573,6 @@ html, body {
       <div class="job-desc">
         <ul>
           <li>Návrhy rezidenčních a komerčních interiérů</li>
-          <li>Kuchyně a nábytek na míru, příprava výroby</li>
           <li>Komunikace s klientem, koordinace s výrobou</li>
         </ul>
       </div>
@@ -561,8 +587,7 @@ html, body {
       <div class="job-desc">
         <ul>
           <li>Návrhy a konzultace, kalkulace, smluvní dokumentace</li>
-          <li>Konstrukce, nákup materiálů, normování</li>
-          <li>Plánování a řízení výroby, vedení týmu</li>
+        <li>Konstrukce, nákup materiálů, normování, plánování a řízení výroby</li>
         </ul>
       </div>
     </div>
@@ -602,8 +627,7 @@ html, body {
       <div class="job-role">Projektant pozemních staveb</div>
       <div class="job-desc">
         <ul>
-          <li>Dokumentace stupně DÚR a DSP</li>
-          <li>Zastupování klienta při územním a stavebním řízení</li>
+          <li>Dokumentace DÚR a DSP. Zastupování při územním a stavebním řízení.</li>
         </ul>
       </div>
     </div>
@@ -620,7 +644,7 @@ html, body {
 
     <div class="edu">
       <div class="edu-header">
-        <span class="edu-title">Udemy: WPF · AZ-900 · C# Masterclass</span>
+        <span class="edu-title">Udemy: WPF · Azure · C# Masterclass</span>
         <span class="edu-date">2025 — 2026</span>
       </div>
       <div class="edu-meta">Pokračující sebevzdělávání</div>
@@ -636,10 +660,10 @@ html, body {
 
     <div class="edu">
       <div class="edu-header">
-        <span class="edu-title">Pozemní stavitelství — Maturita</span>
+        <span class="edu-title">Pozemní stavitelství</span>
         <span class="edu-date">2004 — 2009</span>
       </div>
-      <div class="edu-meta">Střední průmyslová škola stavební Ostrava</div>
+      <div class="edu-meta">Střední průmyslová škola stavební Ostrava · Maturita</div>
     </div>
 
   </main>

@@ -1,18 +1,14 @@
 {
   "routes": [
     {
-      "route": "/maintenance.html",
-      "headers": {
-        "Cache-Control": "no-store"
-      }
+      "route": "/maintenance.html"
     },
     {
       "route": "/*",
-      "rewrite": "/maintenance.html",
-      "statusCode": 503,
-      "headers": {
-        "Cache-Control": "no-store"
-      }
+      "rewrite": "/maintenance.html"
     }
-  ]
+  ],
+  "globalHeaders": {
+    "Cache-Control": "no-store"
+  }
 }
